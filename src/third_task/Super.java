@@ -34,7 +34,6 @@ public class Super {
 
     }
 
-
     public static void superSpeed() {
 
         int speed = 60;
@@ -78,7 +77,6 @@ public class Super {
         } else {
             System.out.println("Я бігтиму по новому маршруту");
         }
-
 
 
     }
