@@ -14,7 +14,7 @@ public class Test3 {
         switch (ageGirl){
 
             case 18 :
-                System.out.println("I think you yet a little girl"); //Sorry for my english
+                System.out.println("I think you yet a little girl"); //Sorry for my english)
                 break;
             case 19 :
                 System.out.println("I think you pretty girl");
