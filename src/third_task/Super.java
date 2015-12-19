@@ -5,7 +5,38 @@ public class Super {
 
     public static void main(String[] args) {
 
-        //test1
+        checkSwich(6);
+
+    }
+
+    private static void checkSwich(int test) {
+
+        switch (test) {
+            case 1:
+                count(32,33);
+                System.out.println(ternaryCount(32, 33));
+                break;
+            case 2:
+                superSpeed();
+                break;
+            case 3:
+                System.out.println("Я і є test3");
+                break;
+            case 4:
+                first("Hello, U-Rise!");
+                break;
+            case 5:
+                while_go(1);
+                break;
+            default:
+                System.out.println("Астанавитесь");
+        }
+
+    }
+
+
+    public static void superSpeed() {
+
         int speed = 60;
         int maxSpeed = 110;
         int countPeople = 400;
@@ -15,43 +46,9 @@ public class Super {
         String when = "26.04.2015";
         boolean YouHavePrava = true;
 
-        //test2
-        int first = 33;
-        int second = 32;
+        //Простиня правда така
+        //Кров з глаз
 
-        //test4
-        int test = 1; //Введіть номер тесту
-
-        //test5
-        int count = 1;
-
-
-        //test3
-        switch (test) {
-
-            case 1:
-                count(first, second);
-                System.out.println(ternaryCount(first, second));
-                break;
-            case 2:
-                superSpeed(speed, maxSpeed,YouHavePrava,countPeople,countFriend,countVolunteer,where,when);
-                break;
-            case 3:
-                System.out.println("Я і є test3");
-                break;
-            case 4:
-                first("Hello, U-Rise!");
-                break;
-            case 5:
-                while_go(count);
-                break;
-
-        }
-
-    }
-
-    public static void superSpeed(int speed, int maxSpeed, boolean YouHavePrava, int countPeople,
-                                   int countFriend, int countVolunteer, String where, String when) {
         if (speed > maxSpeed || !YouHavePrava) {
             System.out.println("Астанавітесь!!!");
         } else {
