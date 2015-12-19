@@ -20,7 +20,7 @@ public class Super {
         int second = 32;
 
         //test4
-        int test = 5; //Введіть номер тесту
+        int test = 1; //Введіть номер тесту
 
         //test5
         int count = 1;
@@ -86,14 +86,14 @@ public class Super {
 
     }
 
-    public static String  ternaryCount(int first, int second) {
+    public static String   ternaryCount(int first, int second) {
         int result = first * second * 12;
         String str = result == 5 ? "result = 5" : "result != 5";
         return str;
 
         }
 
-    public static void count(int first, int second) {
+    public static int count(int first, int second) {
 
         int result = first * second * 12;
 
@@ -102,7 +102,7 @@ public class Super {
         } else {
             System.out.println("result != 5");
         }
-
+        return result;
 
     }
 
