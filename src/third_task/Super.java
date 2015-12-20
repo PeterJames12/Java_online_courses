@@ -5,7 +5,7 @@ public class Super {
 
     public static void main(String[] args) {
 
-        checkSwich(6);
+        checkSwich(1);
 
     }
 
@@ -13,8 +13,9 @@ public class Super {
 
         switch (test) {
             case 1:
-                count(32,33);
-                System.out.println(ternaryCount(32, 33));
+                System.out.println(superFormula(12,17,23));
+                checkSuperFormula();
+                System.out.println(checkWithTernary());
                 break;
             case 2:
                 superSpeed();
@@ -78,27 +79,25 @@ public class Super {
             System.out.println("Я бігтиму по новому маршруту");
         }
 
-
     }
 
-    public static String   ternaryCount(int first, int second) {
-        int result = first * second * 12;
-        String str = result == 5 ? "result = 5" : "result != 5";
-        return str;
-
-        }
-
-    public static int count(int first, int second) {
-
-        int result = first * second * 12;
-
-        if (result == 5) {
-            System.out.println("result = 5");
-        } else {
-            System.out.println("result != 5");
-        }
+    public static int  superFormula(int first, int second, int third ){
+        int result = first * second + third / first + second * third;
         return result;
+    }
 
+    public static void checkSuperFormula(){
+        if (superFormula(12, 17, 23) == 5) {
+            System.out.println("superFormula equal to five, said if. ok");
+        } else {
+            System.out.println("superFormula biggest than five, said else. ok");
+        }
+    }
+
+    public static String  checkWithTernary() {
+       String str = superFormula(12,17,23) == 5 ? "superFormula equal to five, said ternary" :
+               "superFormula biggest than five, said ternary";
+        return str;
     }
 
     public static void first(String str) {
@@ -109,16 +108,17 @@ public class Super {
 
         for (int i = 0; i < 5; i++) {
             System.out.println(str);
-            System.out.println("There is" + say + ", that there are" + persent + " percent sucess with"
+            System.out.println("There is" + say + ", that there are" + persent + " percent success with"
                     + happiness + "happiness.");
         }
 
     }
 
-    public static void while_go(int count) {
+    public static void   while_go(int count) {
         while (count <= 10) {
             System.out.println(count);
             count++;
+
         }
 
     }
