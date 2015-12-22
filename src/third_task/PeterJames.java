@@ -9,6 +9,7 @@ public class PeterJames {
         System.out.println(checkInt("12"));//2
         tryGipotenysa();//3
         checkRivnobedreny();//4
+        checkTwoRivnostoronuh();//5
     }
 
     private static void hello(String hello) {
@@ -53,10 +54,42 @@ public class PeterJames {
         int storona2 = 10;
         int storona3 = 8;
 
-        if (storona1 == storona2 && storona3 < storona1 && storona3 >0) {
+        if (storona1 == storona2 && storona3 < storona1 || storona3 < storona2 && storona3 >0) {
             System.out.println("Трикутник рівнобедрений");
         } else {
             System.out.println("Трикутник не рівнобедрений");
+        }
+
+    }
+
+    private static void checkTwoRivnostoronuh() {
+
+        int one = 12;
+        int two = 12;
+        int thee = 12;
+        String  result = null;
+
+        int  foo = 23;
+        int five = 23;
+        int six = 23;
+        String result2 = null;
+
+        if (one == two && thee == (two + one + thee) / 3) {
+            result = "We love Ukraine";
+        } else {
+            result = "Океан Ельзи";
+        }
+
+        if (foo == five && six == (five + foo + six) / 3) {
+            result2 = "We love Ukraine";
+        } else {
+            result2 = "Hello";
+        }
+
+        if (result == result2) {
+            System.out.println("Вітаю ми маємо два рівносторонніх трикутника");
+        } else {
+            System.out.println("Що ж теж вітаю, але в нас не два рівносторонніх трикутника");
         }
 
     }
