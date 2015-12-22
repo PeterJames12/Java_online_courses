@@ -13,6 +13,8 @@ public class PeterJames {
         twoCount(12,23);//6
         evenNumber(17,23);//7
         fooCount();//8
+        comeBack();
+
 
     }
 
@@ -133,6 +135,24 @@ public class PeterJames {
         }
 
     }
+
+    private static void comeBack() {
+
+        int mas[] = {1, 7, 2, 3, 2};
+
+        String check = null;
+
+        for (int i = 0; i <mas.length; i++) {
+            if (mas[i] == mas[mas.length - i - 1]) {
+                check = "Це палиндром";
+            } else {
+                check = "Це не палиндром";
+            }
+        }
+        System.out.println(check);
+
+    }
+
 
     }
 
