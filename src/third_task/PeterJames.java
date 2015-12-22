@@ -8,8 +8,6 @@ public class PeterJames {
         hello("Hello");//1
         System.out.println(checkInt("@"));//2
         tryGipotenysa();//3
-
-
     }
 
     private static void hello(String hello) {
@@ -28,7 +26,6 @@ public class PeterJames {
 
         if (string == null) return false;
         return true;
-
     }
 
     private static void tryGipotenysa() {
