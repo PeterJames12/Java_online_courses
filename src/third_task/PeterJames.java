@@ -119,14 +119,18 @@ public class PeterJames {
 
     private static void fooCount() {
 
-        int superCount = 12345;
+        int superCount = 3333;
         int result = 0;
 
         while(superCount != 0){
             result = result + (superCount % 10);
             superCount/=10;
         }
-        System.out.println(result + " ");
+        if (result % 2 == 0) {
+            System.out.println("Even number");
+        } else {
+            System.out.println("Not even number");
+        }
 
     }
 
