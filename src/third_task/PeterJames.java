@@ -6,8 +6,9 @@ public class PeterJames {
     public static void main(String[] args) {
 
         hello("Hello");//1
-        System.out.println(checkInt("@"));//2
+        System.out.println(checkInt("12"));//2
         tryGipotenysa();//3
+        checkRivnobedreny();//4
     }
 
     private static void hello(String hello) {
@@ -42,6 +43,20 @@ public class PeterJames {
             System.out.println("Трикутник прямокутний");
         } else {
             System.out.println("Трикутник якійсь інший");
+        }
+
+    }
+
+    private static void checkRivnobedreny() {
+
+        int storona1 = 10;
+        int storona2 = 10;
+        int storona3 = 8;
+
+        if (storona1 == storona2 && storona3 < storona1 && storona3 >0) {
+            System.out.println("Трикутник рівнобедрений");
+        } else {
+            System.out.println("Трикутник не рівнобедрений");
         }
 
     }
