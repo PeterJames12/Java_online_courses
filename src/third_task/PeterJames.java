@@ -11,6 +11,7 @@ public class PeterJames {
         checkRivnobedreny();//4
         checkTwoRivnostoronuh();//5
         twoCount(12,23);//6
+        evenNumber(17,23);//7
     }
 
     private static void hello(String hello) {
@@ -104,4 +105,16 @@ public class PeterJames {
         }
     }
 
-}
+    private static void evenNumber(int first, int second) {
+
+        if (first % 2 == 0 && second % 2 == 0) {
+            System.out.println("Два числа парні");
+        }
+        if (first % 2 != 0 && second % 2 != 0) {
+            System.out.println("Два числа не парні");
+        }
+    }
+
+    }
+
+
