@@ -13,9 +13,8 @@ public class PeterJames {
         twoCount(12,23);//6
         evenNumber(17,23);//7
         fooCount();//8
-        comeBack();
-
-
+        comeBack();//9
+        fooCountPartTwo();//10
     }
 
     private static void hello(String hello) {
@@ -153,7 +152,24 @@ public class PeterJames {
 
     }
 
+    private static void fooCountPartTwo() {
+
+        int mas[] = {17, 23, 17, 23};
+
+        int result = 0;
+        int result2 = 0;
+
+        result = mas[0] + mas[1];
+        result2 = mas[2] + mas[3];
+
+        if (result == result2) {
+            System.out.println("Сума половини чисел однакові");
+        } else {
+            System.out.println("Сума половини чисел не одинакові");
+        }
 
     }
+
+}
 
 
