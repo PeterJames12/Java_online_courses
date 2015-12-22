@@ -10,6 +10,7 @@ public class PeterJames {
         tryGipotenysa();//3
         checkRivnobedreny();//4
         checkTwoRivnostoronuh();//5
+        twoCount(12,23);//6
     }
 
     private static void hello(String hello) {
@@ -93,5 +94,15 @@ public class PeterJames {
         }
 
     }
+
+    private static void twoCount(int first_cool, int second_cool) {
+
+        if (first_cool % second_cool == 0) {
+            System.out.println("Ділиться без остачі");
+        } else {
+            System.out.println("Йо-ма-йо, є остача");
+        }
+    }
+
 
 }
