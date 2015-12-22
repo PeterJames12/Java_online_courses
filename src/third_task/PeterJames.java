@@ -29,7 +29,7 @@ public class PeterJames {
     private static boolean checkInt(String string) {
 
         if (string == null) return false;
-        return true;
+        return string.matches("^-?\\d+$");
     }
 
     private static void tryGipotenysa() {
