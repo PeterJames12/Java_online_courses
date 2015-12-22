@@ -12,6 +12,8 @@ public class PeterJames {
         checkTwoRivnostoronuh();//5
         twoCount(12,23);//6
         evenNumber(17,23);//7
+        fooCount();//8
+
     }
 
     private static void hello(String hello) {
@@ -113,6 +115,19 @@ public class PeterJames {
         if (first % 2 != 0 && second % 2 != 0) {
             System.out.println("Два числа не парні");
         }
+    }
+
+    private static void fooCount() {
+
+        int superCount = 12345;
+        int result = 0;
+
+        while(superCount != 0){
+            result = result + (superCount % 10);
+            superCount/=10;
+        }
+        System.out.println(result + " ");
+
     }
 
     }
