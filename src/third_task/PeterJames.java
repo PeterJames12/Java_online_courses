@@ -15,6 +15,7 @@ public class PeterJames {
         fooCount();//8
         comeBack();//9
         fooCountPartTwo();//10
+        whyBig();//11
     }
 
     private static void hello(String hello) {
@@ -120,13 +121,10 @@ public class PeterJames {
 
     private static void fooCount() {
 
-        int superCount = 3333;
-        int result = 0;
+        int mas[] = {3,3,3,3};
 
-        while(superCount != 0){
-            result = result + (superCount % 10);
-            superCount/=10;
-        }
+        int result = mas[0] + mas[1] + mas[2] + mas[3];
+
         if (result % 2 == 0) {
             System.out.println("Even number");
         } else {
@@ -166,6 +164,23 @@ public class PeterJames {
             System.out.println("Сума половини чисел однакові");
         } else {
             System.out.println("Сума половини чисел не одинакові");
+        }
+
+    }
+
+    private static void whyBig() {
+
+        int mas[] = {7, 3, 2, 1};
+
+        int count = mas[0];
+        int count1 = mas[1];
+        int count2 = mas[2];
+        int count3 = mas[3];
+
+        if (count > count1 && count1 > count2 && count2 > count3) {
+            System.out.println("Кожна цифра не менше наступної в цьому числі");
+        } else {
+            System.out.println("Дивись на два рядки вище, але буде навпаки");
         }
 
     }
