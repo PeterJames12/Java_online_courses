@@ -16,6 +16,7 @@ public class PeterJames {
         comeBack();//9
         fooCountPartTwo();//10
         whyBig();//11
+        quadraticEquation();//12
     }
 
     private static void hello(String hello) {
@@ -184,6 +185,25 @@ public class PeterJames {
         }
 
     }
+
+    private static void quadraticEquation() {
+
+        int a = 1;
+        int b = 1;
+        int c = -2;
+        double x1;
+        double x2;
+        double dis;
+
+        dis = Math.pow(b, 2) - (4 * a * c);
+        x1 = ((-b) + Math.sqrt(dis)) / (2 * a);
+        x2 = ((-b) - Math.sqrt(dis)) / (2 * a);
+
+        System.out.println("Корінь first" + x1);
+        System.out.println("Корінь second" + x2);
+
+    }
+
 
 }
 
