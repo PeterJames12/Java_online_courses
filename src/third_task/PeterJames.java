@@ -6,7 +6,7 @@ public class PeterJames {
     public static void main(String[] args) {
 
         hello("Hello");//1
-        System.out.println(checkInt("12"));//2
+        System.out.println(checkInt("1"));//2
         tryGipotenysa();//3
         checkRivnobedreny();//4
         checkTwoRivnostoronuh();//5
@@ -16,7 +16,8 @@ public class PeterJames {
         comeBack();//9
         fooCountPartTwo();//10
         whyBig();//11
-        quadraticEquation();//12
+        quadraticEquation();//12 and 13
+        System.out.println(checkString("We love Ukraine"));//14
     }
 
     private static void hello(String hello) {
@@ -202,8 +203,18 @@ public class PeterJames {
         System.out.println("Корінь first" + x1);
         System.out.println("Корінь second" + x2);
 
+        if (x1 % 2 == 0 | x2 % 2 == 0) {
+            System.out.println("Don't worry!!! Один із коренів є парним");
+        }
+
     }
 
+    private static boolean checkString(String string) {
+
+        if (string == null) return false;
+        return string.matches("^-?\\d+$");
+
+    }
 
 }
 
