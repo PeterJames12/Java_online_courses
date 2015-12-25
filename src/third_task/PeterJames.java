@@ -5,7 +5,7 @@ public class PeterJames {
 
     public static void main(String[] args) {
 
-        hello("Hello");//1
+        hello("Say Hello right now:");//1
         System.out.println(checkInt("1"));//2
         tryGipotenysa();//3
         checkRivnobedreny();//4
@@ -22,13 +22,8 @@ public class PeterJames {
 
     private static void hello(String hello) {
 
-        char ch = hello.charAt(0);
-        char ch1 = hello.charAt(1);
-        char ch2 = hello.charAt(2);
-        char ch3 = hello.charAt(3);
-        char ch4 = hello.charAt(4);
-
-        System.out.println(ch + " " + ch1 + " " + ch2 + " " + ch3 + " " + ch4);
+        String say = " Hello";
+        System.out.println(hello + say);
 
     }
 
@@ -111,28 +106,24 @@ public class PeterJames {
         }
     }
 
-    private static void evenNumber(int first, int second) {
+    private static boolean evenNumber(int first, int second) {
 
         if (first % 2 == 0 && second % 2 == 0) {
-            System.out.println("Два числа парні");
-        }
-        if (first % 2 != 0 && second % 2 != 0) {
-            System.out.println("Два числа не парні");
-        }
+           return true;
+        } else
+            return false;
     }
 
-    private static void fooCount() {
+    private static boolean fooCount() {
 
         int mas[] = {3,3,3,3};
 
         int result = mas[0] + mas[1] + mas[2] + mas[3];
 
         if (result % 2 == 0) {
-            System.out.println("Even number");
-        } else {
-            System.out.println("Not even number");
-        }
-
+            return true;
+        } else
+            return false;
     }
 
     private static void comeBack() {
@@ -189,9 +180,9 @@ public class PeterJames {
 
     private static void quadraticEquation() {
 
-        int a = 1;
-        int b = 1;
-        int c = -2;
+        int a = 2;
+        int b = 2;
+        int c = 4;
         double x1;
         double x2;
         double dis;
