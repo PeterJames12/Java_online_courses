@@ -16,7 +16,7 @@ public class PeterJames {
         fooCountPartTwo(1723);//10
         whyBig(1723);//11
         quadraticEquation();//12 and 13
-        System.out.println(checkString("We love Ukraine"));//14*/
+        System.out.println(checkString("We love Ukraine"));//14
     }
 
     private static void hello(String hello) {
@@ -198,21 +198,28 @@ public class PeterJames {
     private static void quadraticEquation() {
 
         int a = 2;
-        int b = 2;
-        int c = 4;
+        double b = 16;
+        double c = 14;
         double x1;
         double x2;
         double dis;
 
-        dis = Math.pow(b, 2) - (4 * a * c);
-        x1 = ((-b) + Math.sqrt(dis)) / (2 * a);
-        x2 = ((-b) - Math.sqrt(dis)) / (2 * a);
+        dis = (Math.pow(b,2)) - (4 * a * c);
+        x1 = ((b) + Math.sqrt(dis)) / (2 * a);
+        x2 = ((b) - Math.sqrt(dis)) / (2 * a);
 
-        System.out.println("Корінь first" + x1);
-        System.out.println("Корінь second" + x2);
+        System.out.println("Корінь first " + x1);
+        System.out.println("Корінь second " + x2);
+
+        checkParn(x1,x2);
+    }
+
+    private static void checkParn(double x1, double x2) {
 
         if (x1 % 2 == 0 | x2 % 2 == 0) {
             System.out.println("Don't worry!!! Один із коренів є парним");
+        } else {
+            System.out.println("Не парний");
         }
     }
 
@@ -220,7 +227,6 @@ public class PeterJames {
 
         if (string == null) return false;
         return string.matches("^-?\\d+$");
-
     }
 }
 
