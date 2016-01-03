@@ -5,12 +5,12 @@ public class PeterJames {
 
     public static void main(String[] args) {
         hello("Say Hello right now:");//1
-        checkInt();//2
-        tryGipotenysa(3,4,5);//3
-        checkRivnobedreny(10,10,8);//4
-        checkTwoRivnostoronuh(17,17,17,23,23,23);//5
-        twoCount(12,23);//6
-        evenNumber(17,23);//7
+        checkInt('5');//2
+        tryGipotenysa(3, 4, 5);//3
+        checkRivnobedreny(10, 10, 8);//4
+        checkTwoRivnostoronuh(17, 17, 17, 23, 23, 23);//5
+        twoCount(12, 23);//6 Pattern p = Pattern.compile("^[a-z0-9_-]{3,15}$");
+        evenNumber(17, 23);//7
         fooCount(1723);//8
         comeBack(1723);//9
         fooCountPartTwo(1723);//10
@@ -26,13 +26,33 @@ public class PeterJames {
 
     }
 
-    private static void checkInt() {
+    private static void checkInt(char chack) {
 
+        int symbol = Character.getNumericValue(chack);
+
+        switch (symbol) {
+
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+                System.out.println("Число");
+                break;
+            default:
+                System.out.println("Це не число");
+                break;
+        }
     }
 
     private static void tryGipotenysa(int first, int second, int third) {
 
-        if (first + second > third) {
+        if (first + second > third && first + third > second && third + second > first ) {
             int katet1 = (int) Math.pow(first, 2);
             int katet2 = (int) Math.pow(second, 2);
             int result = (int) Math.pow(third, 2);
@@ -49,7 +69,7 @@ public class PeterJames {
 
     private static void checkRivnobedreny(int storona1, int storona2, int storona3) {
 
-        if (storona1 + storona2 > storona3) {
+        if (storona1 + storona2 > storona3 && storona1 + storona3 > storona2 && storona3 + storona2 > storona1 ) {
 
             if (storona1 == storona2 && storona3 < storona1 || storona3 < storona2 && storona3 > 0) {
                 System.out.println("Трикутник рівнобедрений");
@@ -63,7 +83,8 @@ public class PeterJames {
 
     private static void checkTwoRivnostoronuh(int one,int two,int three,int foo,int five,int six) {
 
-        if (one + two > three && foo + five > six) {
+        if (one + two > three && one + three > two && three + two > one &&
+                foo + five > six && foo + six > five && six + five > foo) {
 
             String result = null;
 
@@ -113,10 +134,7 @@ public class PeterJames {
 
         int arr[] = new int[4];
 
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = girls % 10;
-            girls/=10;
-        }
+        transformer(arr ,girls);
 
         int result = 0;
 
@@ -131,14 +149,11 @@ public class PeterJames {
         }
     }
 
-    private static void comeBack(int chec) {
+    private static void comeBack(int friend) {
 
         int mas[] = new int[4];
 
-        for (int i = 0; i < mas.length; i++) {
-            mas[i] = chec % 10;
-            chec/=10;
-        }
+        transformer(mas,friend);
 
         String check = null;
 
@@ -156,10 +171,7 @@ public class PeterJames {
 
         int mas[] = new int[4];
 
-        for (int i = 0; i < mas.length; i++) {
-            mas[i] = part % 10;
-            part/=10;
-        }
+        transformer(mas,part);
 
         int result = 0;
         int result2 = 0;
@@ -174,14 +186,11 @@ public class PeterJames {
         }
     }
 
-    private static void whyBig(int big) {
+    private static void whyBig(int joy) {
 
         int mas[] = new int[4];
 
-        for (int i = 0; i < mas.length; i++) {
-            mas[i] = big % 10;
-            big/=10;
-        }
+        transformer(mas,joy);
 
         int count = mas[0];
         int count1 = mas[1];
@@ -227,6 +236,13 @@ public class PeterJames {
 
         if (string == null) return false;
         return string.matches("^-?\\d+$");
+    }
+
+    private static void transformer(int [] mas, int all) {
+        for (int i = 0; i < mas.length; i++) {
+            mas[i] = all % 10;
+            all/=10;
+        }
     }
 }
 
