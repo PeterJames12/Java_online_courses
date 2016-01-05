@@ -54,9 +54,11 @@ public class PeterJames {
 
     private static void tryGipotenysa(int first, int second, int third) {
 
-        /*transformerPartyTwo(first,second,third);
+        int mas[] = new int[1];
 
-        if (current == true) {
+        transformerPartyTwo(first, second, third, mas);
+
+        if (mas[0] == 1) {
             int katet1 = (int) Math.pow(first, 2);
             int katet2 = (int) Math.pow(second, 2);
             int result = (int) Math.pow(third, 2);
@@ -68,12 +70,16 @@ public class PeterJames {
             }
         } else {
             System.out.println("Це не трикутник");
-        }*/
+        }
     }
 
     private static void checkRivnobedreny(int storona1, int storona2, int storona3) {
 
-        if (storona1 + storona2 > storona3 && storona1 + storona3 > storona2 && storona3 + storona2 > storona1 ) {
+        int mas[] = new int[1];
+
+        transformerPartyTwo(storona1, storona2, storona3, mas);
+
+        if (mas[0] == 1) {
 
             if (storona1 == storona2 && storona3 < storona1 || storona3 < storona2 && storona3 > 0) {
                 System.out.println("Трикутник рівнобедрений");
@@ -85,10 +91,14 @@ public class PeterJames {
         }
     }
 
-    private static void checkTwoRivnostoronuh(int one,int two,int three,int foo,int five,int six) {
+    private static void checkTwoRivnostoronuh(int one, int two, int three, int foo, int five, int six) {
 
-        if (one + two > three && one + three > two && three + two > one &&
-                foo + five > six && foo + six > five && six + five > foo) {
+        int mas[] = new int[1];
+
+        transformerPartyTwo(one, two, three, mas);
+        transformerPartyTwo(foo, five, six, mas);
+
+        if (mas[0] == 1) {
 
             String result = null;
 
@@ -112,7 +122,7 @@ public class PeterJames {
                 System.out.println("Що ж теж вітаю, але в нас не два рівносторонніх трикутника");
             }
         } else {
-            System.out.println("Це не два трикутника");
+            System.out.println("Це не два трикутники");
         }
     }
 
@@ -251,14 +261,13 @@ public class PeterJames {
         }
     }
 
-    private static void transformerPartyTwo(int first, int second, int third) {
-        /*
+    private static void transformerPartyTwo(int first, int second, int third, int[] mas) {
 
         if (first + second > third && first + third > second && third + second > first) {
-            current = true;
+            mas[0] = 1;
         } else {
-            current = false;
-        }*/
+            mas[0] = 0;
+        }
     }
 }
 
