@@ -1,22 +1,24 @@
 package third_task;
 
 
+import java.util.Arrays;
+
 public class PeterJames {
 
     public static void main(String[] args) {
-        hello("Say Hello right now:");//1
-        checkInt('5');//2
-        tryGipotenysa(3, 4, 5);//3
-        checkRivnobedreny(10, 10, 8);//4
-        checkTwoRivnostoronuh(17, 17, 17, 23, 23, 23);//5
-        twoCount(12, 23);//6 Pattern p = Pattern.compile("^[a-z0-9_-]{3,15}$");
-        evenNumber(17, 23);//7
-        fooCount(1723);//8
-        comeBack(1723);//9
-        fooCountPartTwo(1723);//10
-        whyBig(1723);//11
-        quadraticEquation();//12 and 13
-        System.out.println(checkString("We love Ukraine"));//14
+          hello("Say Hello right now:");//1
+          checkInt('5');//2
+          tryGipotenysa(3, 4, 5);//3
+          checkRivnobedreny(10, 10, 8);//4
+          checkTwoRivnostoronuh(17, 17, 17, 23, 23, 23);//5
+          twoCount(12, 23);//6
+          evenNumber(17, 23);//7
+          fooCount(1723);//8
+          comeBack(1723);//9
+          fooCountPartTwo(1723);//10
+          whyBig(1723);//11
+          System.out.println(quadraticEquation(2, 16, 14));//12 and 13
+          System.out.println(checkString("We love Ukraine"));//14
     }
 
     private static void hello(String hello) {
@@ -52,7 +54,9 @@ public class PeterJames {
 
     private static void tryGipotenysa(int first, int second, int third) {
 
-        if (first + second > third && first + third > second && third + second > first ) {
+        /*transformerPartyTwo(first,second,third);
+
+        if (current == true) {
             int katet1 = (int) Math.pow(first, 2);
             int katet2 = (int) Math.pow(second, 2);
             int result = (int) Math.pow(third, 2);
@@ -64,7 +68,7 @@ public class PeterJames {
             }
         } else {
             System.out.println("Це не трикутник");
-        }
+        }*/
     }
 
     private static void checkRivnobedreny(int storona1, int storona2, int storona3) {
@@ -204,11 +208,8 @@ public class PeterJames {
         }
     }
 
-    private static void quadraticEquation() {
+    private static String quadraticEquation(int a, double b, double c) {
 
-        int a = 2;
-        double b = 16;
-        double c = 14;
         double x1;
         double x2;
         double dis;
@@ -217,19 +218,24 @@ public class PeterJames {
         x1 = ((b) + Math.sqrt(dis)) / (2 * a);
         x2 = ((b) - Math.sqrt(dis)) / (2 * a);
 
-        System.out.println("Корінь first " + x1);
-        System.out.println("Корінь second " + x2);
+        double mas[] = new double[2];
 
-        checkParn(x1,x2);
+        mas[0] = x1;
+        mas[1] = x2;
+
+        checkParn(x1, x2);
+
+        return Arrays.toString(mas);
     }
 
-    private static void checkParn(double x1, double x2) {
+    private static double checkParn(double x1, double x2) {
 
         if (x1 % 2 == 0 | x2 % 2 == 0) {
             System.out.println("Don't worry!!! Один із коренів є парним");
         } else {
             System.out.println("Не парний");
         }
+        return x1;
     }
 
     private static boolean checkString(String string) {
@@ -243,6 +249,16 @@ public class PeterJames {
             mas[i] = all % 10;
             all/=10;
         }
+    }
+
+    private static void transformerPartyTwo(int first, int second, int third) {
+        /*
+
+        if (first + second > third && first + third > second && third + second > first) {
+            current = true;
+        } else {
+            current = false;
+        }*/
     }
 }
 
