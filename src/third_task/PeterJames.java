@@ -9,7 +9,7 @@ public class PeterJames {
         tryGipotenysa(3, 4, 5);//3
         checkRivnobedreny(10, 10, 8);//4
         checkTwoRivnostoronuh(17, 17, 17, 23, 23, 23);//5
-        twoCount(12, 23);//6 Pattern p = Pattern.compile("^[a-z0-9_-]{3,15}$");
+        twoCount(12, 23);//6
         evenNumber(17, 23);//7
         fooCount(1723);//8
         comeBack(1723);//9
