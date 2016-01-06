@@ -1,8 +1,6 @@
 package third_task;
 
 
-import java.util.Arrays;
-
 public class PeterJames {
 
     public static void main(String[] args) {
@@ -11,13 +9,13 @@ public class PeterJames {
         tryGipotenysa(3, 4, 5);//3
         checkRivnobedreny(10, 10, 8);//4
         checkTwoRivnostoronuh(17, 17, 17, 23, 23, 23);//5
-        twoCount(12, 23);//6
+        twoCount(12, 23);//6 Pattern p = Pattern.compile("^[a-z0-9_-]{3,15}$");
         evenNumber(17, 23);//7
         fooCount(1723);//8
         comeBack(1723);//9
         fooCountPartTwo(1723);//10
         whyBig(1723);//11
-        System.out.println(quadraticEquation());//12 and 13
+        quadraticEquation();//12 and 13
         System.out.println(checkString("We love Ukraine"));//14
     }
 
@@ -33,6 +31,7 @@ public class PeterJames {
         int symbol = Character.getNumericValue(chack);
 
         switch (symbol) {
+
             case 0:
             case 1:
             case 2:
@@ -53,8 +52,7 @@ public class PeterJames {
 
     private static void tryGipotenysa(int first, int second, int third) {
 
-        transformerPartTwo(first, second, third);
-
+        if (first + second > third && first + third > second && third + second > first ) {
             int katet1 = (int) Math.pow(first, 2);
             int katet2 = (int) Math.pow(second, 2);
             int result = (int) Math.pow(third, 2);
@@ -64,23 +62,29 @@ public class PeterJames {
             } else {
                 System.out.println("Трикутник якійсь інший");
             }
+        } else {
+            System.out.println("Це не трикутник");
+        }
     }
 
     private static void checkRivnobedreny(int storona1, int storona2, int storona3) {
 
-        transformerPartTwo(storona1,storona2,storona3);
+        if (storona1 + storona2 > storona3 && storona1 + storona3 > storona2 && storona3 + storona2 > storona1 ) {
 
             if (storona1 == storona2 && storona3 < storona1 || storona3 < storona2 && storona3 > 0) {
                 System.out.println("Трикутник рівнобедрений");
             } else {
                 System.out.println("Трикутник не рівнобедрений");
             }
+        } else {
+            System.out.println("Це не трикутник");
         }
+    }
 
-    private static void checkTwoRivnostoronuh(int one, int two, int three, int foo, int five, int six) {
+    private static void checkTwoRivnostoronuh(int one,int two,int three,int foo,int five,int six) {
 
-        transformerPartTwo(one,two,three);
-        transformerPartTwo(foo,five,six);
+        if (one + two > three && one + three > two && three + two > one &&
+                foo + five > six && foo + six > five && six + five > foo) {
 
             String result = null;
 
@@ -103,7 +107,10 @@ public class PeterJames {
             } else {
                 System.out.println("Що ж теж вітаю, але в нас не два рівносторонніх трикутника");
             }
+        } else {
+            System.out.println("Це не два трикутника");
         }
+    }
 
     private static void twoCount(int first_cool, int second_cool) {
 
@@ -127,7 +134,7 @@ public class PeterJames {
 
         int arr[] = new int[4];
 
-        transformer(arr, girls);
+        transformer(arr ,girls);
 
         int result = 0;
 
@@ -146,11 +153,11 @@ public class PeterJames {
 
         int mas[] = new int[4];
 
-        transformer(mas, friend);
+        transformer(mas,friend);
 
         String check = null;
 
-        for (int i = 0; i < mas.length; i++) {
+        for (int i = 0; i <mas.length; i++) {
             if (mas[i] == mas[mas.length - i - 1]) {
                 check = "Це палиндром";
             } else {
@@ -164,7 +171,7 @@ public class PeterJames {
 
         int mas[] = new int[4];
 
-        transformer(mas, part);
+        transformer(mas,part);
 
         int result = 0;
         int result2 = 0;
@@ -183,7 +190,7 @@ public class PeterJames {
 
         int mas[] = new int[4];
 
-        transformer(mas, joy);
+        transformer(mas,joy);
 
         int count = mas[0];
         int count1 = mas[1];
@@ -197,7 +204,7 @@ public class PeterJames {
         }
     }
 
-    private static String quadraticEquation() {
+    private static void quadraticEquation() {
 
         int a = 2;
         double b = 16;
@@ -206,17 +213,14 @@ public class PeterJames {
         double x2;
         double dis;
 
-        dis = (Math.pow(b, 2)) - (4 * a * c);
+        dis = (Math.pow(b,2)) - (4 * a * c);
         x1 = ((b) + Math.sqrt(dis)) / (2 * a);
         x2 = ((b) - Math.sqrt(dis)) / (2 * a);
 
-        double mas[] = new double[2];
-        mas[0] = x1;
-        mas[1] = x2;
+        System.out.println("Корінь first " + x1);
+        System.out.println("Корінь second " + x2);
 
-        checkParn(x1, x2);
-
-        return Arrays.toString(mas);
+        checkParn(x1,x2);
     }
 
     private static void checkParn(double x1, double x2) {
@@ -234,22 +238,12 @@ public class PeterJames {
         return string.matches("^-?\\d+$");
     }
 
-    private static void transformer(int[] mas, int all) {
+    private static void transformer(int [] mas, int all) {
         for (int i = 0; i < mas.length; i++) {
             mas[i] = all % 10;
-            all /= 10;
-        }
-    }
-
-    private static void transformerPartTwo(int first, int second, int third) {
-
-        if (first + second > third && first + third > second && third + second > first) {
-            System.out.println("Трикутник існує");
-        } else {
-            System.out.println("Це не трикутник");
+            all/=10;
         }
     }
 }
-
 
 
