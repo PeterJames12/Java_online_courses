@@ -33,7 +33,6 @@ public class PeterJames {
         int symbol = Character.getNumericValue(chack);
 
         switch (symbol) {
-
             case 0:
             case 1:
             case 2:
