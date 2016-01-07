@@ -1,10 +1,11 @@
 package third_task;
 
+import java.util.Arrays;
 
 public class PeterJames {
 
     public static void main(String[] args) {
-        hello("Say Hello right now:");//1
+        hello("Say Hello right now:");//1a
         checkInt('5');//2
         tryGipotenysa(3, 4, 5);//3
         checkRivnobedreny(10, 10, 8);//4
@@ -15,7 +16,7 @@ public class PeterJames {
         comeBack(1723);//9
         fooCountPartTwo(1723);//10
         whyBig(1723);//11
-        quadraticEquation();//12 and 13
+        System.out.println(quadraticEquation(2, 16, 14));//12 and 13
         System.out.println(checkString("We love Ukraine"));//14
     }
 
@@ -52,63 +53,55 @@ public class PeterJames {
 
     private static void tryGipotenysa(int first, int second, int third) {
 
-        if (first + second > third && first + third > second && third + second > first ) {
-            int katet1 = (int) Math.pow(first, 2);
-            int katet2 = (int) Math.pow(second, 2);
-            int result = (int) Math.pow(third, 2);
+        transformerPartyTwo(first, second, third);
 
-            if (katet1 + katet2 == result) {
-                System.out.println("Трикутник прямокутний");
-            } else {
-                System.out.println("Трикутник якійсь інший");
-            }
+        int katet1 = (int) Math.pow(first, 2);
+        int katet2 = (int) Math.pow(second, 2);
+        int result = (int) Math.pow(third, 2);
+
+        if (katet1 + katet2 == result) {
+            System.out.println("Трикутник прямокутний");
         } else {
-            System.out.println("Це не трикутник");
+            System.out.println("Трикутник якійсь інший");
         }
     }
 
     private static void checkRivnobedreny(int storona1, int storona2, int storona3) {
 
-        if (storona1 + storona2 > storona3 && storona1 + storona3 > storona2 && storona3 + storona2 > storona1 ) {
+        transformerPartyTwo(storona1,storona2,storona3);
 
-            if (storona1 == storona2 && storona3 < storona1 || storona3 < storona2 && storona3 > 0) {
-                System.out.println("Трикутник рівнобедрений");
-            } else {
-                System.out.println("Трикутник не рівнобедрений");
-            }
+        if (storona1 == storona2 && storona3 < storona1 || storona3 < storona2 && storona3 > 0) {
+            System.out.println("Трикутник рівнобедрений");
         } else {
-            System.out.println("Це не трикутник");
+            System.out.println("Трикутник не рівнобедрений");
         }
     }
 
-    private static void checkTwoRivnostoronuh(int one,int two,int three,int foo,int five,int six) {
+    private static void checkTwoRivnostoronuh(int one, int two, int three, int foo, int five, int six) {
 
-        if (one + two > three && one + three > two && three + two > one &&
-                foo + five > six && foo + six > five && six + five > foo) {
+        transformerPartyTwo(one,two,three);
+        transformerPartyTwo(foo,five,six);
 
-            String result = null;
+        String result = null;
 
-            String result2 = null;
+        String result2 = null;
 
-            if (one == two && three == (two + one + three) / 3) {
-                result = "We love Ukraine";
-            } else {
-                result = "Океан Ельзи";
-            }
-
-            if (foo == five && six == (five + foo + six) / 3) {
-                result2 = "We love Ukraine";
-            } else {
-                result2 = "Hello";
-            }
-
-            if (result == result2) {
-                System.out.println("Вітаю ми маємо два рівносторонніх трикутника");
-            } else {
-                System.out.println("Що ж теж вітаю, але в нас не два рівносторонніх трикутника");
-            }
+        if (one == two && three == (two + one + three) / 3) {
+            result = "We love Ukraine";
         } else {
-            System.out.println("Це не два трикутника");
+            result = "Океан Ельзи";
+        }
+
+        if (foo == five && six == (five + foo + six) / 3) {
+            result2 = "We love Ukraine";
+        } else {
+            result2 = "Hello";
+        }
+
+        if (result == result2) {
+            System.out.println("Вітаю ми маємо два рівносторонніх трикутника");
+        } else {
+            System.out.println("Що ж теж вітаю, але в нас не два рівносторонніх трикутника");
         }
     }
 
@@ -204,11 +197,8 @@ public class PeterJames {
         }
     }
 
-    private static void quadraticEquation() {
+    private static String quadraticEquation(int a, double b, double c) {
 
-        int a = 2;
-        double b = 16;
-        double c = 14;
         double x1;
         double x2;
         double dis;
@@ -217,10 +207,14 @@ public class PeterJames {
         x1 = ((b) + Math.sqrt(dis)) / (2 * a);
         x2 = ((b) - Math.sqrt(dis)) / (2 * a);
 
-        System.out.println("Корінь first " + x1);
-        System.out.println("Корінь second " + x2);
+        double mas[] = new double[2];
 
-        checkParn(x1,x2);
+        mas[0] = x1;
+        mas[1] = x2;
+
+        checkParn(x1, x2);
+
+        return Arrays.toString(mas);
     }
 
     private static void checkParn(double x1, double x2) {
@@ -242,6 +236,15 @@ public class PeterJames {
         for (int i = 0; i < mas.length; i++) {
             mas[i] = all % 10;
             all/=10;
+        }
+    }
+
+    private static void transformerPartyTwo(int first, int second, int third) {
+
+        if (first + second > third && first + third > second && third + second > first) {
+            System.out.println("Трикутник існує");
+        } else {
+            System.out.println("Трикутник не існує");
         }
     }
 }
