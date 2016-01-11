@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class PeterJames {
 
     public static void main(String[] args) {
-        hello("Say Hello right now:");//1a
+        hello("Say Hello right now:");//1
         checkInt('5');//2
         tryGipotenysa(3, 4, 5);//3
         checkRivnobedreny(10, 10, 8);//4
@@ -98,7 +98,7 @@ public class PeterJames {
             result2 = "Hello";
         }
 
-        if (result == result2) {
+        if (result.equals(result2)) {
             System.out.println("Вітаю ми маємо два рівносторонніх трикутника");
         } else {
             System.out.println("Що ж теж вітаю, але в нас не два рівносторонніх трикутника");
