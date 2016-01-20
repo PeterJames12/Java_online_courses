@@ -7,16 +7,17 @@ import java.util.Random;
 public class Garret {
 
     public static void main(String[] args) {
-        /*System.out.println(fib(10));//15
+        System.out.println(fecNearly(12));//17
+        System.out.println(fec(9));
+        System.out.println(fib(10));//15
         System.out.println(fibRec(12));//16
 
         System.out.println(fec(5));//18
-        System.out.println(fecNearly(6));//17
         zeroOne(255);//19
 
         freeCount(12);
         copyMac();
-        secondCount(5,12);*/
+        secondCount(5,12);
         StringCount("1723");
         StringPlus("1223");
     }
@@ -62,6 +63,8 @@ public class Garret {
                 System.out.print(" " + mac[i]);
             }
         }
+        System.out.println();// Це щоб результат наступного методу
+        // не був в одному рядку в консолі з даним методом
     }
 
     private static void freeCount(int number) {
@@ -154,19 +157,21 @@ public class Garret {
 
     private static long fecNearly(int cisco) {
 
-        int res = 1;
-
         if (cisco <= 0) {
             return -1;
         }
         if (cisco == 1) {
             return cisco;
         }
-
-        for (int i = 1; i < cisco; i++) {
-            res *= i;
-        }
-        return res;
+        if (cisco <= 4) return 2;
+        if (cisco > 4 && cisco <= 15) return 3;
+        if (cisco > 15 && cisco <= 72) return 4;
+        if (cisco > 72 && cisco <= 420) return 5;
+        if (cisco > 420 && cisco <= 2160) return 6;
+        if (cisco > 2160 && cisco <= 22680) return 7;
+        if (cisco > 22680 && cisco <= 204120) return 8;
+        System.out.println("Навіщо таке велике число??? ");
+        return cisco;
     }
 
     private static long fec(int cisco) {
