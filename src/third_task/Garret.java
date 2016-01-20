@@ -7,7 +7,7 @@ import java.util.Random;
 public class Garret {
 
     public static void main(String[] args) {
-        System.out.println(fib(10));//15
+        /*System.out.println(fib(10));//15
         System.out.println(fibRec(12));//16
 
         System.out.println(fec(5));//18
@@ -16,7 +16,37 @@ public class Garret {
 
         freeCount(12);
         copyMac();
-        secondCount(5,12);
+        secondCount(5,12);*/
+        StringCount("1723");
+        StringPlus("1223");
+    }
+
+    private static void StringPlus(String just) throws NumberFormatException {
+
+        int result = 0;
+        int container;
+        try {
+            Integer res = Integer.valueOf(just);
+            while (res > 0) {
+                container = res % 10;
+                result += container;
+                res /= 10;
+            }
+            System.out.println(result);
+        } catch (NumberFormatException e) {
+            System.out.println("Це не число");
+        }
+
+    }
+
+    private static void StringCount(String well) throws NumberFormatException {
+
+        try {
+            Integer res = Integer.valueOf(well);
+            System.out.println(res);
+        } catch (NumberFormatException e) {
+            System.out.println("Це не число");
+        }
     }
 
     private static void secondCount(int first, int second) {
@@ -94,6 +124,7 @@ public class Garret {
     }
 
     private static void zeroOne(int cisco) {
+
         //System.out.println(Integer.toBinaryString(cisco));
         int res;
 
