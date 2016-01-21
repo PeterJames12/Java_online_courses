@@ -7,50 +7,55 @@ import java.util.Random;
 public class Garret {
 
     public static void main(String[] args) {
-        System.out.println(fecNearly(12));//17
-        System.out.println(fec(9));
-        System.out.println(fib(10));//15
-        System.out.println(fibRec(12));//16
 
-        System.out.println(fec(5));//18
-        zeroOne(255);//19
+        System.out.println(test18fecNearly(12));
 
-        freeCount(12);
-        copyMac();
-        secondCount(5,12);
-        StringCount("1723");
-        StringPlus("1223");
+        System.out.println(test17fec(9));
+        System.out.println(test15fib(10));
+        System.out.println(test16fibRec(12));
+        test28freeCount(12);
+
+        test22secondCount(5, 12);
+        test21copyMac();
+        System.out.println(test19RellyInt("12"));
+        System.out.println(test20GoToOneNumber("Now 2016 year"));
+
+        test26zeroOne(255);
     }
 
-    private static void StringPlus(String just) throws NumberFormatException {
+    public static boolean test19CheckInt(char ch) {
 
-        int result = 0;
-        int container;
-        try {
-            Integer res = Integer.valueOf(just);
-            while (res > 0) {
-                container = res % 10;
-                result += container;
-                res /= 10;
+        return Character.isDigit(ch);
+    }
+
+    public static boolean test19RellyInt(String number) {
+        for (int i = 0; i < number.toCharArray().length; i++) {
+            if (!test19CheckInt(number.toCharArray()[i])) {
+                return  false;
             }
-            System.out.println(result);
-        } catch (NumberFormatException e) {
-            System.out.println("Це не число");
         }
-
+        return true;
     }
 
-    private static void StringCount(String well) throws NumberFormatException {
+    public static int test19GoToConsole(String number) {
 
-        try {
-            Integer res = Integer.valueOf(well);
-            System.out.println(res);
-        } catch (NumberFormatException e) {
-            System.out.println("Це не число");
+        if (!test19RellyInt(number)) {
+            return -1;
         }
+        return Integer.parseInt(number);
     }
 
-    private static void secondCount(int first, int second) {
+    public static int test20GoToOneNumber(String number) {
+        String result = "";
+        for (int i = 0; i < number.toCharArray().length; i++) {
+            if (test19CheckInt(number.toCharArray()[i])) {
+                result += number.toCharArray()[i];
+            }
+        }
+        return test19GoToConsole(result);
+    }
+
+    private static void test22secondCount(int first, int second) {
 
         int mac[] = new int[second - first - 1];
 
@@ -67,7 +72,7 @@ public class Garret {
         // не був в одному рядку в консолі з даним методом
     }
 
-    private static void freeCount(int number) {
+    private static void test28freeCount(int number) {
 
         int mas[] = new int[number];
 
@@ -77,12 +82,12 @@ public class Garret {
             int goMas = random.nextInt(23);
             mas[i] = goMas;
         }
-        goConsoleMas(mas);
+        test29goConsoleMas(mas);
 
-        goSearshMas(mas);
+        test30goSearshMas(mas);
     }
 
-    private static void copyMac() {
+    private static void test21copyMac() {
 
         int mas[] = {1, 2, 5, 4, 6, 7, 8, 5, 8, 2, 5};
 
@@ -94,7 +99,7 @@ public class Garret {
         System.out.println(Arrays.toString(arr));
     }
 
-    private static void goSearshMas(int[] mas) {
+    private static void test30goSearshMas(int[] mas) {
 
         int find = 12;
         int result = 0;
@@ -111,13 +116,12 @@ public class Garret {
         System.out.println("Index " + result);
     }
 
-    private static void goConsoleMas(int mas []) {
-
+    private static void test29goConsoleMas(int mas[]) {
         System.out.println(Arrays.toString(mas));
 
     }
 
-    private static void withDouble(double router) {
+    private static void ZeroOnewWintDouble(double router) {
 
         double db = 0.625;
         double result;
@@ -126,7 +130,7 @@ public class Garret {
         finish = result % 2;
     }
 
-    private static void zeroOne(int cisco) {
+    private static void test26zeroOne(int cisco) {
 
         //System.out.println(Integer.toBinaryString(cisco));
         int res;
@@ -138,7 +142,7 @@ public class Garret {
         }
     }
 
-    private static int fib(int arr) {
+    private static int test15fib(int arr) {
 
         int mas[] = new int[arr + 1];
         mas[0] = 0;
@@ -150,12 +154,12 @@ public class Garret {
         return mas[arr];
     }
 
-    private static long fibRec(int arr) {
+    private static long test16fibRec(int arr) {
 
-        return (arr < 2) ? arr : fibRec(arr - 2) + fibRec(arr - 1);
+        return (arr < 2) ? arr : test16fibRec(arr - 2) + test16fibRec(arr - 1);
     }
 
-    private static long fecNearly(int cisco) {
+    private static long test18fecNearly(int cisco) {
 
         if (cisco <= 0) {
             return -1;
@@ -174,7 +178,7 @@ public class Garret {
         return cisco;
     }
 
-    private static long fec(int cisco) {
+    private static long test17fec(int cisco) {
 
         int res = 1;
 
