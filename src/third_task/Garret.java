@@ -26,6 +26,25 @@ public class Garret {
 
         test25DelPall(6996);
 
+        test22secondCount(5,17);
+        test23ArProg(5, 17);
+    }
+
+    private static void test23ArProg(int life, int lifecell) {
+
+        if (life == lifecell) {
+            System.out.println(-1);
+        }
+
+        int mac[] = new int[lifecell - life];
+        int progress = 2;
+
+        for (int i = 0; i < mac.length; i++) {
+            life += progress;
+            if (life < lifecell) {
+                System.out.println(life);
+            }
+        }
     }
 
     private static void test25DelPall(int lifecell) {
