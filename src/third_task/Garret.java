@@ -21,6 +21,63 @@ public class Garret {
         System.out.println(test20GoToOneNumber("Now 2016 year"));
 
         test26zeroOne(255);
+
+        System.out.println(test24TwoCount(1532));
+
+        test25DelPall(6996);
+
+    }
+
+    private static void test25DelPall(int lifecell) {
+
+        String str = Integer.toString(lifecell);
+
+        boolean check = true;
+
+        int arr[] = new int[str.length()];
+        goToMassiv(arr, lifecell);
+        Arrays.sort(arr);
+
+        int mas[] = new int[arr.length - 1];
+
+        System.arraycopy(arr, 0, mas, 0, mas.length);
+
+        for (int i = 0; i < mas.length; i++) {
+            if (arr[i] == arr[mas.length - i - 1]) {
+                check = true;
+            } else {
+                check = false;
+            }
+        }
+        System.out.println(check);
+    }
+
+    private static boolean test24TwoCount(int lifecell) {
+
+        String str = Integer.toString(lifecell);
+
+        int arr[] = new int[str.length()];
+
+        goToMassiv(arr, lifecell);
+
+        Arrays.sort(arr);
+
+        int first = arr[0];
+        int last = arr[arr.length - 1];
+
+        if ((first + last) % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private static void goToMassiv(int[] arr, int lifecell) {
+
+        for (int i = arr.length - 1; i >= 0; i--) {
+            arr[i] = lifecell % 10;
+            lifecell /= 10;
+        }
     }
 
     public static boolean test19CheckInt(char ch) {
