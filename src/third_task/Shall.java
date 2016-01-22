@@ -5,7 +5,38 @@ public class Shall {
 
     public static void main(String[] args) {
 
+        System.out.println(checkNumber(1723));
+
         withoutFib();
+    }
+
+    private static int checkNumber(int lifecell) {
+        String str = Integer.toString(lifecell);
+
+        int length = str.length();
+        int arr[] = new int[length];
+        goToMassiv(arr, lifecell);
+
+        int last = arr[arr.length-1];
+        int half = arr[arr.length/2-1];
+        int sum = 0;
+        if (last % 2 == 0) {
+            for (int i = 0; i < arr.length - 1; i++) {
+                sum += arr[i];
+            }
+        } else {
+            for (int i = arr.length/2; i < arr.length; i++) {
+                sum += arr[i];
+            }
+        }
+        return sum;
+    }
+
+    private static void goToMassiv(int [] arr,int lifecell) {
+        for (int i = arr.length-1; i >=0; i--) {
+            arr[i] = lifecell % 10;
+            lifecell /= 10;
+        }
     }
 
     private static void withoutFib() {
