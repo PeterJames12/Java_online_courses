@@ -11,21 +11,20 @@ public class Shall {
     }
 
     private static int checkNumber(int lifecell) {
+
         String str = Integer.toString(lifecell);
 
-        int length = str.length();
-        int arr[] = new int[length];
+        int arr[] = new int[str.length()];
         goToMassiv(arr, lifecell);
 
-        int last = arr[arr.length-1];
-        int half = arr[arr.length/2-1];
+        int last = arr[arr.length - 1];
         int sum = 0;
         if (last % 2 == 0) {
             for (int i = 0; i < arr.length - 1; i++) {
                 sum += arr[i];
             }
         } else {
-            for (int i = arr.length/2; i < arr.length; i++) {
+            for (int i = arr.length / 2; i < arr.length; i++) {
                 sum += arr[i];
             }
         }
