@@ -7,13 +7,13 @@ import java.util.Random;
 public class Garret {
 
     public static void main(String[] args) {
+        test28freeCount(12);
 
         System.out.println(test18fecNearly(12));
 
         System.out.println(test17fec(9));
         System.out.println(test15fib(10));
         System.out.println(test16fibRec(12));
-        test28freeCount(12);
 
         test22secondCount(5, 12);
         test21copyMac();
@@ -105,9 +105,10 @@ public class Garret {
     }
 
     public static boolean test19RellyInt(String number) {
+
         for (int i = 0; i < number.toCharArray().length; i++) {
             if (!test19CheckInt(number.toCharArray()[i])) {
-                return  false;
+                return false;
             }
         }
         return true;
@@ -160,7 +161,7 @@ public class Garret {
         }
         test29goConsoleMas(mas);
 
-        test30goSearshMas(mas);
+        test30goSearshMas(mas, 8);
     }
 
     private static void test21copyMac() {
@@ -175,24 +176,18 @@ public class Garret {
         System.out.println(Arrays.toString(arr));
     }
 
-    private static void test30goSearshMas(int[] mas) {
-
-        int find = 12;
-        int result = 0;
+    private static boolean test30goSearshMas(int[] mas, int find) {
 
         for (int i = 0; i < mas.length; i++) {
-            int elem = mas[i];
-            if (elem == find) {
-                result = i;
-                break;
-            } else {
-                result = -1;
+                if (mas[i] == find) {
+                    return true;
+                }
             }
-        }
-        System.out.println("Index " + result);
+        return false;
     }
 
     private static void test29goConsoleMas(int mas[]) {
+
         System.out.println(Arrays.toString(mas));
 
     }
