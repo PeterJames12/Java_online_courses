@@ -11,12 +11,52 @@ public class Petrovich {
         test32Massiv();
         test35CopyMass();
         test36GeneralDiagonal();
+        test37OtherDiagonal();
         random();
+    }
+
+    private static void test37OtherDiagonal() {
+
+        int mas[][] = {{12, 2, 5}, {3, 5, 1}, {5, 10, 12}};
+
+        int fitst = mas[0][mas.length-1];
+        int second = mas[mas.length / 2][mas.length / 2];
+        int third = mas[0][mas.length - 1];
+        int halh = mas.length;
+
+        int result = 0;
+
+        for (int i = 0; i < mas.length; i++) {
+            for (int j = 0; j < mas[i].length; j++) {
+                if (mas[i][j] == fitst | mas[i][j] == second | mas[i][j] == third) {
+                    result += mas[i][j];
+                }
+            }
+        }
+        System.out.println("Середнє арефметичне побічної діагоналі = " + result / halh);
+        // test33goToConsoleMas(mas);
     }
 
     private static void test36GeneralDiagonal() {
 
-        int mas[][] = {{1, 2, 3}, {3, 2, 1}, {6, 5, 4}};
+        int mas[][] = {{12, 2, 3}, {3, 12, 1}, {6, 5, 12}};
+
+        int first = mas[0][0];
+        int second = mas[mas.length / 2][mas.length / 2];
+        int third = mas[mas.length - 1][mas.length - 1];
+
+        int result = 0;
+
+        for (int i = 0; i < mas.length; i++) {
+            for (int j = 0; j < mas[i].length; j++) {
+                if (mas[i][j] == first | mas[i][j] == second | mas[i][j] == third) {
+                    result += mas[i][j];
+                }
+            }
+        }
+        System.out.println("Сума головної діагоналі = " + result);
+
+        //test33goToConsoleMas(mas);
 
     }
 
@@ -26,7 +66,7 @@ public class Petrovich {
         int arrg[][] = new int[3][3];
 
         System.arraycopy(mas, 0, arrg, 0, 3);
-        test33goToConsoleMas(arrg);
+        // test33goToConsoleMas(arrg);
     }
 
     private static void test31Petrovich() {
@@ -60,7 +100,7 @@ public class Petrovich {
                 mas[j][i] = goMas;
             }
         }
-        test33goToConsoleMas(mas);
+        // test33goToConsoleMas(mas);
         System.out.println(test34goSearshMas(mas, 8));
     }
 
@@ -89,13 +129,14 @@ public class Petrovich {
     private static void random() {
 
         int go = 0;
+        int rand = 0;
         for (int i = 0; i < 1000; i++) {
-            int rand = new Random().nextInt(4);
+            rand = new Random().nextInt(4);
             if (rand == 0) {
                 go += 1;
             }
         }
-        System.out.println("% = " + (go * 100) / 1000);
+        System.out.println("Частота зустрічи " + rand + " = " + (go * 100) / 1000 + " %");
     }
 
 }
