@@ -1,4 +1,4 @@
-package third_task;
+package codeFromHostel;
 
 
 public class Shall {
@@ -39,6 +39,7 @@ public class Shall {
     }
 
     private static void withoutFib() {
+
         int first[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
         int last[] = new int[first.length];
