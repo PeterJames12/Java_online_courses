@@ -1,4 +1,4 @@
-package third_task;
+package codeFromHostel;
 
 
 import java.util.Arrays;
