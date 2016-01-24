@@ -12,7 +12,40 @@ public class Petrovich {
         test35CopyMass();
         test36GeneralDiagonal();
         test37OtherDiagonal();
+        test38Otriangle();
         random();
+    }
+
+    private static void test38Otriangle() {
+
+        int mas[][] = {{32, 42, 45, 91, 41, 39,100}, {33, 39, 31, 10, 11, 83,100},
+                        {32, 10, 12, 23, 15, 17,100},{32, 22, 25, 92, 26, 27,100},
+                        {73, 79, 31, 10, 11, 78,100}, {32, 10, 12, 23, 15, 17,100},
+                        {63, 69, 61, 10, 11, 68,100}};
+
+        int result = 0;
+
+        for (int i = 0; i < 1; i++) {
+            for (int j = 1; j < mas[i].length-1; j++) {
+                 result += mas[i][j];
+            }
+        }
+
+        for (int i = 1; i < 2; i++) {
+            for (int j = 2; j < mas[i].length - 2; j++) {
+                result += mas[i][j];
+            }
+        }
+
+        for (int i = 2; i < 3; i++) {
+            for (int j = 3; j < mas[i].length - 3; j++) {
+                result += mas[i][j];
+            }
+        }
+        System.out.println("Тут трохи багато форів, " +
+                "але в завданні сказано порахувати суму трикутника заданого масиву," +
+                " а не універсального, і його сума = " + result);
+       // test33goToConsoleMas(mas);
     }
 
     private static void test37OtherDiagonal() {
