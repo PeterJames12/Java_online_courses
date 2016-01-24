@@ -57,7 +57,20 @@ public class Garret {
         goToMassiv(arr, lifecell);
         Arrays.sort(arr);
 
-        int mas[] = new int[arr.length - 1];
+        int last = arr[arr.length-1];
+
+        int countMass = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != last) {
+                countMass += 1;
+            }
+            if (arr[i] == last) {
+                arr[i] = 0;
+            }
+        }
+
+        int mas[] = new int[countMass];
 
         System.arraycopy(arr, 0, mas, 0, mas.length);
 
