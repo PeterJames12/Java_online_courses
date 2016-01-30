@@ -17,6 +17,8 @@ public class Petrovich {
         test39Schochukc();
         test40Matrix();
         test41chtopMatrix(3, 3, 23);
+        test42SearchMax();
+        test43MaxElemOtherDia();
     }
 
     private static void test38Otriangle() {
@@ -56,23 +58,23 @@ public class Petrovich {
 
     private static void test37OtherDiagonal() {
 
-        int mas[][] = {{12, 2, 5}, {3, 5, 1}, {5, 10, 12}};
+        int mas[][] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
-        int fitst = mas[0][mas.length - 1];
+        int first = mas[0][mas.length - 1];
         int second = mas[mas.length / 2][mas.length / 2];
-        int third = mas[0][mas.length - 1];
-        int halh = mas.length;
+        int third = mas[mas.length - 1][0];
+        int half = mas.length;
 
-        int result = 0;
+        double result = 0;
 
         for (int i = 0; i < mas.length; i++) {
             for (int j = 0; j < mas[i].length; j++) {
-                if (mas[i][j] == fitst | mas[i][j] == second | mas[i][j] == third) {
+                if (mas[i][j] == first || mas[i][j] == second || mas[i][j] == third) {
                     result += mas[i][j];
                 }
             }
         }
-        System.out.println("Середнє арефметичне побічної діагоналі = " + result / halh);
+         System.out.println("Середнє арефметичне побічної діагоналі = " + result / half);
         // test33goToConsoleMas(mas);
     }
 
@@ -310,4 +312,70 @@ public class Petrovich {
             test41SuperMatrix(mas);
         }
     }
+
+    private static void test42SearchMax() {
+
+        int mas[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+        int maxElement = 0;
+
+        for (int i = 0; i < mas.length; i++) {
+            if (mas[i] > maxElement) {
+                maxElement = mas[i];
+            }
+        }
+        System.out.println(maxElement);
+        System.out.println();
+    }
+
+    private static void test43MaxElemOtherDia() {
+
+        int mas[][] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+
+        int first = mas[0][mas.length - 1];
+        int second = mas[mas.length / 2][mas.length / 2];
+        int third = mas[mas.length - 1][0];
+
+        int maxElement = 0;
+
+        for (int i = 0; i < mas.length; i++) {
+            for (int j = 0; j < mas[i].length; j++) {
+                if (maxElement < first) {
+                    maxElement = first;
+                }
+                if (maxElement < second) {
+                    maxElement = second;
+                }
+                if (maxElement < third) {
+                    maxElement = third;
+                }
+            }
+        }
+        System.out.println(maxElement);
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
