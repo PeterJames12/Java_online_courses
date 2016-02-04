@@ -6,7 +6,7 @@ import java.util.Random;
 public class Petrovich {
 
     public static void main(String[] args) {
-    
+
         test31Petrovich();
         test32Massiv();
         test35CopyMass();
@@ -74,7 +74,7 @@ public class Petrovich {
                 }
             }
         }
-         System.out.println("Середнє арефметичне побічної діагоналі = " + result / half);
+        System.out.println("Середнє арефметичне побічної діагоналі = " + result / half);
         // test33goToConsoleMas(mas);
     }
 
@@ -200,7 +200,7 @@ public class Petrovich {
 
     private static void test40Matrix() {
         //27x27)
-
+        System.out.println("Множим матрицю!!!");
         int mas[][] = {{23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23},
                 {23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23},
                 {23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23},
@@ -257,14 +257,11 @@ public class Petrovich {
                 {12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12},
                 {12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12}};
 
+
         int result[][] = new int[mas.length][arg.length];
 
         for (int line = 0; line < mas.length; line++) {
-            for (int coloumn = 0; coloumn < arg[line].length; coloumn++) {
-                for (int resMatrix = 0; resMatrix < arg.length; resMatrix++) {
-                    result[line][coloumn] += mas[line][resMatrix] * arg[resMatrix][coloumn];
-                }
-            }
+            forest(result, arg, line, mas);
         }
 
         for (int i = 0; i < result.length; i++) {
@@ -272,6 +269,16 @@ public class Petrovich {
                 System.out.print(result[i][j] + " ");
             }
             System.out.println();
+        }
+        System.out.println();
+    }
+
+    private static void forest(int[][] result, int[][] arg,int line,int [][] mas) {
+
+        for (int coloumn = 0; coloumn < arg[line].length; coloumn++) {
+            for (int resMatrix = 0; resMatrix < arg.length; resMatrix++) {
+                result[line][coloumn] += mas[line][resMatrix] * arg[resMatrix][coloumn];
+            }
         }
     }
 
@@ -324,7 +331,7 @@ public class Petrovich {
                 maxElement = mas[i];
             }
         }
-        System.out.println(maxElement);
+        System.out.println("max element = " +  maxElement);
         System.out.println();
     }
 
@@ -351,9 +358,8 @@ public class Petrovich {
                 }
             }
         }
-        System.out.println(maxElement);
+        System.out.println("Max element = " + maxElement);
     }
-
 }
 
 
