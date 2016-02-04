@@ -98,7 +98,6 @@ public class Petrovich {
         System.out.println("Сума головної діагоналі = " + result);
 
         //test33goToConsoleMas(mas);
-
     }
 
     private static void test35CopyMass() {
@@ -181,6 +180,7 @@ public class Petrovich {
     }
 
     private static void test39Schochukc() {
+
         int mas[][] = {{23, 23, 23}, {23, 23, 23}, {23, 23, 23}};
 
         int gsmart = 23;
@@ -273,7 +273,7 @@ public class Petrovich {
         System.out.println();
     }
 
-    private static void forest(int[][] result, int[][] arg,int line,int [][] mas) {
+    private static void forest(int[][] result, int[][] arg, int line, int[][] mas) {
 
         for (int coloumn = 0; coloumn < arg[line].length; coloumn++) {
             for (int resMatrix = 0; resMatrix < arg.length; resMatrix++) {
@@ -282,21 +282,26 @@ public class Petrovich {
         }
     }
 
-    private static void test41SuperMatrix(int [][] mas) {
+    private static void test41SuperMatrix(int[][] mas) {
 
         for (int k = 0; k < mas.length; k++) {
-            for (int i = 0; i < mas.length; i++) {
-                for (int j = 0; j < mas[i].length - 1; j++) {
-                    if (mas[i][j] > mas[i][j + 1]) {
-                        int tmp = mas[i][j];
-                        mas[i][j] = mas[i][j + 1];
-                        mas[i][j + 1] = tmp;
-                    }
-                }
-            }
+            sortmatrix(mas);
         }
         test33goToConsoleMas(mas);
         System.out.println();
+    }
+
+    private static void sortmatrix(int[][] mas) {
+
+        for (int i = 0; i < mas.length; i++) {
+            for (int j = 0; j < mas[i].length - 1; j++) {
+                if (mas[i][j] > mas[i][j + 1]) {
+                    int tmp = mas[i][j];
+                    mas[i][j] = mas[i][j + 1];
+                    mas[i][j + 1] = tmp;
+                }
+            }
+        }
     }
 
     private static void test41chtopMatrix(int line, int coloumn, int howManyMatrixYouWant) {
