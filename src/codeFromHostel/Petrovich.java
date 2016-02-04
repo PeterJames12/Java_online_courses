@@ -96,7 +96,6 @@ public class Petrovich {
             }
         }
         System.out.println("Сума головної діагоналі = " + result);
-
         //test33goToConsoleMas(mas);
     }
 
