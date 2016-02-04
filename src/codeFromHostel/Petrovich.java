@@ -103,7 +103,7 @@ public class Petrovich {
     private static void test35CopyMass() {
 
         int mas[][] = {{1, 2, 3}, {3, 2, 1}, {6, 5, 4}};
-        int arg[][] = new int[3][3];
+        int arg[][] = new int[mas.length][mas.length];
 
         System.arraycopy(mas, 0, arg, 0, 3);
         // test33goToConsoleMas(arg);
