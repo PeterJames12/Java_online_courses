@@ -52,20 +52,26 @@ public class CheckPointPart2 {
                 }
             }
             chtopMatrix(line, coloumn, result, howManyMatrixYouWant - 1);
-            MatrixXXX(result, mas, arg);
+            matrixXXX(result, mas, arg);
         }
     }
 
-    private static void MatrixXXX(int[][] result, int[][] mas, int[][] arg) {
+    private static void matrixXXX(int[][] result, int[][] mas, int[][] arg) {
 
         for (int line = 0; line < mas.length; line++) {
-            for (int coloumn = 0; coloumn < arg[line].length; coloumn++) {
-                for (int resMatrix = 0; resMatrix < arg.length; resMatrix++) {
-                    result[line][coloumn] += mas[line][resMatrix] * arg[resMatrix][coloumn];
-                }
+            forest(result, arg, line, mas);
+        }
+
+        goToConsole(result);
+    }
+
+    private static void forest(int[][] result, int[][] arg,int line,int [][] mas) {
+
+        for (int coloumn = 0; coloumn < arg[line].length; coloumn++) {
+            for (int resMatrix = 0; resMatrix < arg.length; resMatrix++) {
+                result[line][coloumn] += mas[line][resMatrix] * arg[resMatrix][coloumn];
             }
         }
-        goToConsole(result);
     }
 
     private static void goToConsole(int[][] result) {
